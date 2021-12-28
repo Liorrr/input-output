@@ -1,4 +1,4 @@
-package com.tav;
+package lior;
 
 public class Main {
 

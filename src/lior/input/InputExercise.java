@@ -1,6 +1,6 @@
-package com.tav.input;
+package lior.input;
 
-import com.tav.input.model.Book;
+import lior.input.model.Book;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,8 +13,18 @@ public class InputExercise {
         List<Book> books = new ArrayList<>();
         try {
             BufferedReader reader = new BufferedReader(new FileReader("titles_to_prices.txt"));
+            String raw;
+            while ((raw = reader.readLine()) != null) {
+                String[] splitRaw = raw.split(", ");
+                books.add(new Book(splitRaw[0], Float.parseFloat(splitRaw[1])));
+            }
+
         } catch (IOException e) {
             System.err.println(e.getMessage());
+        }
+
+        for (Book book : books) {
+            System.out.println(book.toString());
         }
     }
 }

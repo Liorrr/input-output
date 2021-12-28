@@ -1,4 +1,4 @@
-package com.tav.input.model;
+package lior.input.model;
 
 public class Book {
     public Book(String title, float price) {
